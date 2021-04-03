@@ -2,7 +2,10 @@ package stringOperation;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
+
+
 
 public class PracticeStringOperation {
 
@@ -225,10 +228,46 @@ public static void strPractice() {
 		System.out.println("Only vowels present in this string :"+str14);
 		
 		//15. Capitalize the first letter of the string
-		
+		String str15 = "selenium";
+		char firstLetter = str15.charAt(0);
+		String restStr15 = str15.substring(1);
+		firstLetter = Character.toUpperCase(firstLetter);
+		System.out.println("After capitalizing first letter :"+firstLetter+restStr15);
 		//16. Capitalize the last letter of the string
-		
+		String str16 = "selenium";
+		char lastLetter = str16.charAt(str16.length()-1);
+		String restStr16 = str15.substring(0,str16.length()-1);
+		lastLetter = Character.toUpperCase(lastLetter);
+		System.out.println("After capitalizing last letter :"+restStr16+lastLetter);
 		//17. Capitalize any given input indexed letter of a string
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Input the string");
+		String str17 = sc.nextLine();
+		System.out.println("Input the index of the string which is to be capitalized");
+		int index = sc.nextInt();
+		
+		String restPart;
+		String restpart1;
+		String restPart2;
+		char letterToCapitalize = str17.charAt(index);
+		letterToCapitalize = Character.toUpperCase(letterToCapitalize);
+		if(index == 0 )
+		{
+			restPart = str17.substring(1);
+			System.out.println("After capitalizing input letter :"+letterToCapitalize+restPart);
+		}
+		else if(index == str17.length()-1)
+		{
+			restPart = str17.substring(0,str17.length()-1);
+			System.out.println("After capitalizing input letter :"+restPart+letterToCapitalize);
+		}
+		else
+		{
+			restpart1 = str17.substring(0, index);
+			restPart2 = str17.substring(index+1, str17.length());
+			System.out.println("After capitalizing input letter :"+restpart1+letterToCapitalize+restPart2);
+		}
   }
 
 }
